@@ -128,7 +128,6 @@ function calculateTotal() {
     applyPromotionsCart(); // Aplica promociones después de calcular el total
 }
 
-
 // Exercise 4
     // Implement promotions
 
