@@ -131,10 +131,10 @@ function calculateTotal() {
 
 // Exercise 4
     // Implement promotions
-let productQuantitiesWithOffer = {};
+
 function applyPromotionsCart() {
     //  Almacenar la cantidad total de cada producto con una oferta.
-
+    let productQuantitiesWithOffer = {};
     // Calcular la cantidad total de cada producto con una oferta.
     cart.forEach(product => {
         if (product.offer) {
