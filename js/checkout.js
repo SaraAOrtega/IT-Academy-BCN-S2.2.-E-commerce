@@ -1,6 +1,3 @@
-
-// Exercise 6
-
 function validate(event) {
     event.preventDefault();
 
@@ -14,19 +11,21 @@ function validate(event) {
 
     // Expresiones regulares
     const expresiones = {
-        exName: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, //  Letras y espacios, pueden llevar acentos.
+        exName: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, // Letras y espacios, pueden llevar acentos.
         exLastN: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, // Letras y espacios, pueden llevar acentos.
         exEmail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-        exAdress: /^[a-zA-Z0-9\s]{3,40}$/, // 
-        exPassword: /^.{4,12}$/, // 4 a 12 digitos.
-        exPhone: /^\d{7,14}$/ // 7 a 14 numeros.
+        exAddress: /^[a-zA-Z0-9\s]{3,40}$/, // Letras, números y espacios.
+        exPassword: /^.{4,12}$/, // 4 a 12 caracteres.
+        exPhone: /^\d{7,14}$/ // 7 a 14 números.
     };
+
+    // Variable para contar campos inválidos
+    let invalidCount = 0;
 
     // Validar nombre
     if (!expresiones.exName.test(fName.value)) {
         fName.classList.add("is-invalid");
-        fName.focus();
-        return false;
+        invalidCount++;
     } else {
         fName.classList.add("is-valid");
         fName.classList.remove("is-invalid");
@@ -35,8 +34,7 @@ function validate(event) {
     // Validar apellido
     if (!expresiones.exLastN.test(fLastN.value)) {
         fLastN.classList.add("is-invalid");
-        fLastN.focus();
-        return false;
+        invalidCount++;
     } else {
         fLastN.classList.add("is-valid");
         fLastN.classList.remove("is-invalid");
@@ -45,18 +43,16 @@ function validate(event) {
     // Validar email
     if (!expresiones.exEmail.test(fEmail.value)) {
         fEmail.classList.add("is-invalid");
-        fEmail.focus();
-        return false;
+        invalidCount++;
     } else {
         fEmail.classList.add("is-valid");
         fEmail.classList.remove("is-invalid");
     }
 
     // Validar dirección
-    if (!expresiones.exAdress.test(fAddress.value)) {
+    if (!expresiones.exAddress.test(fAddress.value)) {
         fAddress.classList.add("is-invalid");
-        fAddress.focus();
-        return false;
+        invalidCount++;
     } else {
         fAddress.classList.add("is-valid");
         fAddress.classList.remove("is-invalid");
@@ -65,8 +61,7 @@ function validate(event) {
     // Validar contraseña
     if (!expresiones.exPassword.test(fPassword.value)) {
         fPassword.classList.add("is-invalid");
-        fPassword.focus();
-        return false;
+        invalidCount++;
     } else {
         fPassword.classList.add("is-valid");
         fPassword.classList.remove("is-invalid");
@@ -75,20 +70,18 @@ function validate(event) {
     // Validar teléfono
     if (!expresiones.exPhone.test(fPhone.value)) {
         fPhone.classList.add("is-invalid");
-        fPhone.focus();
-        return false;
+        invalidCount++;
     } else {
         fPhone.classList.add("is-valid");
         fPhone.classList.remove("is-invalid");
     }
-	if (expresiones.exName.test(fName.value) &&
-	expresiones.exLastN.test(fLastN.value) &&
-	expresiones.exEmail.test(fEmail.value) &&
-	expresiones.exPassword.test(fPassword.value) &&
-	expresiones.exPhone.test(fPhone.value)) {
-	alert("¡Order placed successfully!");
-}
 
-return true;
-    
+    // Si hay campos inválidos, muestra un mensaje de error
+    if (invalidCount > 0) {
+        return false;
+    }
+
+    // Si todos los campos son válidos, muestra un mensaje de éxito y devuelve true
+    alert("¡Order placed successfully!");
+    return true;
 }

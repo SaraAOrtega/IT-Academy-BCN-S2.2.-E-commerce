@@ -79,12 +79,12 @@
 				<h3 class="my-3 bord shadow text-center"><i class="fas fa-stopwatch p-2"></i>Delivery on time</h3>
 			</div>
 		</div>
-		<form class="form" onsubmit="return validate(event)">
+		<form class="form needs-validation" novalidate>
 			<div class="row bord p-5 shadow m-5">
 				<div class="col-sm-6">
 					<div class="mt-3">
 						<label for="fName" class="form-label">First Name:</label>
-						<input id="fName" class="form-control ml-3" type="text" placeholder="First Name" />
+						<input id="fName" class="form-control ml-3" type="text" placeholder="First Name" required/>
 						<div class="valid-feedback"> It's Okay
 						</div>
 						<div id="errorName" class="invalid-feedback">This field is required and must have, at least, 3
@@ -94,7 +94,7 @@
 					<div class="mt-3 ">
 						<label for="fEmail" class="form-label">Email:</label>
 						
-						<input id="fEmail" class="form-control ml-3" type="email" placeholder="Email" minlength="3" />
+						<input id="fEmail" class="form-control ml-3" type="email" placeholder="Email" minlength="3" required/>
 						<div class="valid-feedback"> It's Okay
 						</div>
 						<div id="errorEmail" class="invalid-feedback">This field is required and must contain an '@' and
@@ -104,7 +104,7 @@
 					<div class="mt-3 ">
 						<label for="fAddress" class="form-label">Address:</label>
 						
-						<input id="fAddress" class="form-control" type="text" placeholder="Address" minlength="3" />
+						<input id="fAddress" class="form-control" type="text" placeholder="Address" minlength="3" required/>
 						<div class="valid-feedback"> It's Okay
 						</div>
 						<div id="errorAddress" class="invalid-feedback">This field is required and must have, at least,
@@ -116,7 +116,7 @@
 					<div class="mt-3">
 						<label for="fLastN" class="form-label">Last Name:</label>
 						
-						<input id="fLastN" class="form-control" type="text" placeholder="Last Name" minlength="3" />
+						<input id="fLastN" class="form-control" type="text" placeholder="Last Name" minlength="3" required/>
 						<div class="valid-feedback"> It's Okay
 						</div>
 						<div id="errorLastN" class="invalid-feedback">This field is required and must have, at least, 3
@@ -126,7 +126,7 @@
 					<div class="mt-3">
 						<label for="fPassword" class="form-label">Password:</label>
 						<input id="fPassword" class="form-control" title="(4-8 characters)" type="password"
-							minlength="4" maxlength="8"  autocomplete="current-password" placeholder="Password" />
+							minlength="4" maxlength="8"  autocomplete="current-password" placeholder="Password" required/>
 							<div class="valid-feedback"> It's Okay
 							</div>
 							<div id="errorPassword" class="invalid-feedback">Enter a correct password</div>
