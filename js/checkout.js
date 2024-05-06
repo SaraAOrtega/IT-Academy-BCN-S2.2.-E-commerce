@@ -14,10 +14,10 @@ function validate(event) {
 
     // Expresiones regulares
     const expresiones = {
-        exName: /^[a-zA-Z0-9]{3,16}$/, // Letras, numeros
+        exName: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, //  Letras y espacios, pueden llevar acentos.
         exLastN: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, // Letras y espacios, pueden llevar acentos.
         exEmail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-        exAdress: /^[a-zA-Z0-9]{3,16}$/, // Letras, numeros 
+        exAdress: /^[a-zA-Z0-9\s]{3,40}$/, // 
         exPassword: /^.{4,12}$/, // 4 a 12 digitos.
         exPhone: /^\d{7,14}$/ // 7 a 14 numeros.
     };
